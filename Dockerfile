@@ -6,7 +6,5 @@ FROM scratch
 WORKDIR /
 COPY caddy /caddy
 COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-VOLUME /Caddyfile
-VOLUME /certs
 EXPOSE 443 80
 CMD ["/caddy", "-conf", "/Caddyfile"]
